@@ -11,6 +11,7 @@ const Router = require("./routes")
 app.use(express.json());
 
 const indexRouter = require('./routes/index')
+const authorRouter = require('./routes/authors')
 
 
 app.set('view engine', 'ejs')
@@ -32,6 +33,7 @@ try {
 
  
 app.use('/', indexRouter)
+app.use('/authors', authorRouter)
 
 
-app.listen(process.env.PORT || 3000)
+app.listen(process.env.PORT)
